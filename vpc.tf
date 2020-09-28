@@ -9,7 +9,7 @@ resource "aws_vpc" "main" {
 
 # Pubic Subnet
 resource "aws_subnet" "public" {
-  vpc_id     = "${aws_vpc.main.id}"
+  vpc_id     = aws_vpc.main.id
   cidr_block = "10.0.1.0/24"
 
   tags = {
@@ -19,7 +19,7 @@ resource "aws_subnet" "public" {
 
 # Private subnet
 resource "aws_subnet" "private" {
-  vpc_id     = "${aws_vpc.main.id}"
+  vpc_id     = aws_vpc.main.id
   cidr_block = "10.0.2.0/24"
 
   tags = {

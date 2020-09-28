@@ -1,6 +1,6 @@
 resource "aws_security_group" "sg" {
   name = "allow_ssh"
-  vpc_id = "${aws_vpc.main.id}"
+  vpc_id = aws_vpc.main.id
 
   ingress {
     from_port = 22
