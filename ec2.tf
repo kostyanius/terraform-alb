@@ -18,14 +18,21 @@ data "aws_ami" "ubuntu" {
 # AWS instance
 resource "aws_instance" "ec2-0" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t2.medium"
+  instance_type = "t2.nano"
   subnet_id               =  aws_subnet.public.id
   associate_public_ip_address = "true"
   key_name = aws_key_pair.ec2key.key_name
   vpc_security_group_ids = [aws_security_group.sg.id]
-
+  user_data = <<-EOF
+    #! /bin/bash
+    sudo apt-get update
+    sudo apt-get install -y nginx
+    sudo systemctl start nginx
+    sudo systemctl enable nginx
+    ufw allow 80/tcp	
+    EOF
   tags = {
-    Name = "ec2-0"
+                Name = "ec2-0"
   }
 
   depends_on = [aws_internet_gateway.igw]
