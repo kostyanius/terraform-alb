@@ -1,4 +1,4 @@
-#Security group for application load balancer
+# Security group for application load balancer
 resource "aws_security_group" "lb_sg" {
   name   = "allow_http"
   vpc_id = aws_vpc.main.id
