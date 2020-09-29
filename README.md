@@ -5,7 +5,7 @@
 * [Setup](#setup)
 
 ## General info
-This project is simple test terraform template
+This project is simple test terraform template which demonstrates work of load balancer with ec2 instance access and some restrictions for external access from not whitelisted ip addresses
 	
 ## Technologies
 Project is created with:
