@@ -1,3 +1,4 @@
+# Bind ec2 and app lb security groups
 resource "aws_security_group_rule" "opened_to_alb" {
   type                     = "ingress"
   from_port                = 80
