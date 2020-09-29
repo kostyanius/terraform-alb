@@ -16,7 +16,7 @@ Project is created with:
 Before start please set your CIDR in variables.tf
   
 ## Setup
-To run this project, install it locally using:
+To run this project, please, install [terraform executor](https://www.terraform.io/downloads.html) locally, add it to your PATH variable and run the next commands:
 
 ```
 $ terraform init
